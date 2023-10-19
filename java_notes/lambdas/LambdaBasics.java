@@ -4,7 +4,7 @@ package java_notes.lambdas;
  * Inteface I here is a functional interface because it has just 1 abstract method to implement.
  * Default and static methods do not count.
  */
-interface I {
+interface SimpleInterface {
     void method1();
 
     /**
@@ -24,11 +24,18 @@ interface I {
     }
 }
 
+interface GenericParameterWithReturn<T> {
+    boolean process(T t);
+}
+
 public class LambdaBasics {
     public static void main(String[] args)
     {
+        /**
+         * Simple Interface
+         */
         //pre-java-8
-        I pre_java_8_implementation = new I(){
+        SimpleInterface pre_java_8_implementation = new SimpleInterface(){
             public void method1(){
                 System.out.println("method1");
             }
@@ -36,13 +43,28 @@ public class LambdaBasics {
         pre_java_8_implementation.method1();
 
         //post-java-8
-        I post_java8_1 = () -> {
+        SimpleInterface post_java8_1 = () -> {
             System.out.println("method1");
             System.out.println("multiline code");
         };
         post_java8_1.method1();
 
-        I post_java8_2 = () -> System.out.println("method1 single line");
+        SimpleInterface post_java8_2 = () -> System.out.println("method1 single line");
         post_java8_2.method1();
+
+        /**
+         * Generic Parameter and Return value
+         */
+
+        // single statement, returns value
+        GenericParameterWithReturn<Integer> i1_1 = i -> i > 0;
+        System.out.println(i1_1.process(45));
+
+        // multiple statements, returns value
+        GenericParameterWithReturn<Integer> i1_2 = i -> {
+            System.out.println("printing something");
+            return i > 0;
+        };
+        System.out.println(i1_2.process(54));
     }
 }
