@@ -2,6 +2,8 @@ package java_notes.lambdas;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -157,6 +159,64 @@ public class LambdaBasics {
         BinaryOperator<String> concatBiOp = (x, y) -> x + y;
         System.out.println(concatBiOp.apply("AC", "DC"));
 
+        System.out.println("Local variables Effectively Final");
+        // localVariable will be used in lambda
+        int localVariable = 4;
+
+        // following statement will not work, reassigning value before lambda definition 
+        // localVariable+=5;
+        
+        Predicate<Integer> checkSomething = x -> {
+            // following statement will not work, reassigning value inside lambda definition
+            // localVariable++;
+            return x + localVariable > 0;
+        };
+        
+        // following statement will not work, reassigning value after lambda definition
+        //localVariable+=2;
+
+        System.out.println(checkSomething.test(6));
+
+        // following statement will not work, reassigning value after lambda call
+        //localVariable+=2;
+
+        System.out.println("Bound Methods References");
+
+        String localName = "Krutik";
+        Predicate<String> localNameContains_withoutMethodRef = s -> localName.contains(s);
+        Predicate<String> localNameContains = localName::contains;
+        System.out.println(localNameContains_withoutMethodRef.test("k"));
+        System.out.println(localNameContains.test("r"));
+        BiPredicate<String, Integer> nameStartsWithOffSet = localName::startsWith;
+        System.out.println(nameStartsWithOffSet.test("ru", 1));
+
+        System.out.println("Unbound Methods References");
+        Function<String, String> upperCase1 = String::toUpperCase;
+        // means Function<String, String> upperCase1 = s -> s.toUpperCase();
+        System.out.println(upperCase1.apply("case"));
+        BiFunction<String, String, String> concat1 = String::concat;
+        // means BiFunction<String, String, String> concat1 = (x, y) -> x.concat(y);
+        System.out.println(concat1.apply("ABC", "DEF"));
+
+        System.out.println("Static Method References");
+        /**
+         * Following will not compile because Collections.sort() returns void and Functions will return
+         *  */ 
+        // Function<List<String>, List<String>> sort = Collections::sort;
+
+        Consumer<List<String>> sort1 = Collections::sort;
+        List<String> listOfString = new ArrayList(Arrays.asList("h", "a", "n"));
+        sort1.accept(listOfString);
+        System.out.println(listOfString);
+
+        System.out.println("Constructor methods");
+        Supplier<StringBuilder> needAStringBuilder = StringBuilder::new;
+        // Supplier<StringBuilder> randomize = () -> new StringBuilder();
+        System.out.println(needAStringBuilder.get().append("Carmy").append(" The Bear"));
+        
+        Function<Integer, List<String>> sizedList = ArrayList::new;
+        System.out.println(sizedList.apply(4).size());    
+        
     }
 
     /**
