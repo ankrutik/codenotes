@@ -6,10 +6,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
+import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * Inteface I here is a functional interface because it has just 1 abstract method to implement.
@@ -114,6 +118,10 @@ public class LambdaBasics {
         capitalize.accept("def");
         // Following line will not compile because accept() returns void
         // System.out.println(capitalize.accept("xyz"));
+
+        /**
+         * Collections which work on single elements accept Consumers in their forEach methods
+         * */ 
         List<String> surnames = new ArrayList<>();
         Consumer<String> maintainCapitalSurnames = s -> surnames.add(s.toUpperCase());
         maintainCapitalSurnames.accept("arekar");
@@ -128,7 +136,26 @@ public class LambdaBasics {
         mapTownToPin.accept("Mahim", "400016");
         mapTownToPin.accept("Gundavli", "400093");
         printPinForTown.accept("Mahim");
+        /**
+         * Collections that work on 2 elements, accept BiConsumers in their forEach methods
+         */
         pincodes.forEach((town, pin) -> System.out.println(town + ": " + pin));
+
+        System.out.println("Function");
+        Function<String, Integer> length = s -> s.length();
+        System.out.println(length.apply("What is the length of this string?"));
+
+        System.out.println("BiFunction");
+        BiFunction<String, String, Boolean> contains = (x, y) -> x.contains(y);
+        System.out.println(contains.apply("Stream", "ream"));
+
+        System.out.println("Unary Operator");
+        UnaryOperator<String> capitalizeOp = s -> s.toUpperCase();
+        System.out.println(capitalizeOp.apply("abc"));
+
+        System.out.println("Binary Operator");
+        BinaryOperator<String> concatBiOp = (x, y) -> x + y;
+        System.out.println(concatBiOp.apply("AC", "DC"));
 
     }
 
