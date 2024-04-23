@@ -1,5 +1,4 @@
-# Servlets
-Tags: #java 
+#java #http #webservers 
 
 Servlets are **classes that handle HTTP requests**.
 A web server will have a **servlet container** in which the servlet class will exist.

@@ -1,4 +1,4 @@
-Tags: #docker 
+#docker 
 
 - Refer to this as a [checklist](https://testdriven.io/blog/docker-best-practices/)
 - In case your application stack needs needs multiple types of apps, have separate containers for each app.

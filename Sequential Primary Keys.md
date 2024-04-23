@@ -1,4 +1,4 @@
-Tags: #database 
+#database 
 
 - Cannot be used in distributed, need to handle syncing 
 - Simple approach for non-distributed 

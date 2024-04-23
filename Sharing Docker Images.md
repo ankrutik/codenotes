@@ -1,8 +1,7 @@
-Tags: #docker 
+#docker 
 
 - `docker login -u YOUR-USER-NAME`
-- `docker push docker/getting-started`
-- 
+- `docker push docker/getting-started` 
 
 # Links
 

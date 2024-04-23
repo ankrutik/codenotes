@@ -1,4 +1,4 @@
-Tags: #docker 
+#docker 
 
 - Mount directory from host's file system into containers
 - `docker run -it --mount type=bind,src="<host_dir_path>",target=<container_dir_path> ubuntu bash`

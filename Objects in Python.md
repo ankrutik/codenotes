@@ -1,4 +1,4 @@
-Tags: #tech/language/python 
+#python 
 
 - identity, type, value
 - when unreachable, garbage collection occurs
@@ -7,7 +7,6 @@ Tags: #tech/language/python
 		- tracing or debugging facilities
 		- references to external resources
 			- use `try...finally` and `with` statement
-- 
 
 # Links
 

@@ -1,6 +1,6 @@
-Tags: #design #performance
+#design #performance
 
-- track progress of reuest through a distributed system
+- track progress of request through a distributed system
 - Libraries
 	- Spring Cloud Sleuth
 - Tracing systems

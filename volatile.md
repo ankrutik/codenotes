@@ -1,5 +1,4 @@
-# volatile
-Tags: #tech #java
+#java/concurrency 
 
 The [[Java Memory Model]] uses both the main memory and cache to store shared resources between objects. 
 

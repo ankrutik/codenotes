@@ -1,4 +1,4 @@
-# Changing schema name
+#database #oracle
 ```sql
 -- get id of schema
 -- to perform this you will have to login as sysdba

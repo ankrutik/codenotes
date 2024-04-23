@@ -1,5 +1,4 @@
-# HTTP Response Codes
-Tags: #tech 
+#webservers #web
 
 100-199 Informational
 200-299 Successful

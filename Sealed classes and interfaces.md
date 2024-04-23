@@ -1,5 +1,4 @@
-# Sealed classes and interfaces
-Tags: #java
+#java
 
 Prior to this spec, we could avoid a class from being extended by using the `final` keyword.
 

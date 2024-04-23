@@ -1,4 +1,4 @@
-Tags: #git 
+#git 
 
 - clone, pull, push only certain files or directories of a repo
 - Opposite of [[git submodules]]

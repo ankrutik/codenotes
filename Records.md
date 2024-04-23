@@ -1,5 +1,4 @@
-# Records
-Tags: #java 
+#java 
 
 Java 14 feature
 Final classes with final members that have public accessors.

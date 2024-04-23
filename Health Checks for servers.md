@@ -1,4 +1,4 @@
-Tags: #deployment
+#deployment
 
 - Summary
 	- Don’t mark instances unhealthy prematurely

@@ -1,7 +1,7 @@
-Tags: #routine 
+#routine #softskills 
 
 - Sleep
-	- brain restructures and reorganizes information
+	- brain restructures and re-organizes information
 	- remember how you studied during AWS exam
 - Hydration
 - Exercise

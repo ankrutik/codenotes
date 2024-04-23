@@ -1,5 +1,4 @@
-# Web vs Application servers
-Tags: #java
+#java #webservers 
 
 Application servers have full support for Java EE spec whereas web servers provide only a subset of that.
 

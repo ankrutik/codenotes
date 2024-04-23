@@ -1,4 +1,4 @@
-Tags: #tech  #java #design
+#java #design
 
 - has-a relationship between whole and part
 - part can exist independently of whole

@@ -1,4 +1,4 @@
-Tags: #docker 
+#docker 
 
 docker command to build a docker image from a Dockerfile found in the directory where the command is run from.
 

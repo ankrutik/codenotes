@@ -1,4 +1,4 @@
-# The fallacies of distributed systems
+#architecture 
 Communication is unreliable and can fail. Use store and forward model. Rabbitmq, activemq.  
 
 

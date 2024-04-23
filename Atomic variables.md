@@ -1,4 +1,5 @@
 #java 
+
 [[volatile]] keyword solves the [[Visibility Problem]] which helps in multi-threaded applications. 
 
 If the application goes beyond reading and updates the values, this will create the [[Synchronisation problem ]] which is:

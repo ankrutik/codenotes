@@ -1,5 +1,4 @@
-# Using git on Android
-Tags: #git #android
+#git #android
 
 ## Install Termux
 https://play.google.com/store/apps/details?id=com.termux

@@ -1,5 +1,4 @@
-# Tomcat
-Tags: #java 
+#java #webservers 
 
 Web server that can be used to deploy java applications. 
 

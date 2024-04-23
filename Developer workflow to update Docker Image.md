@@ -1,6 +1,6 @@
-Tags: #docker 
+#docker 
 
-```
+```bash
 docker rm <docker_container_name>
 docker rmi <docker_image_name>
 docker build -t <docker_image_name>

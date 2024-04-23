@@ -1,4 +1,4 @@
-Tags: #database
+#database
 
 - Globally unique, collision is only theoretical
 - Usage in Distributed systems

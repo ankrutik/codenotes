@@ -1,4 +1,4 @@
-Tags: #ai/generative #coding
+#ai/generative #coding
 
 Use cases to explore:
 - apply code review comments

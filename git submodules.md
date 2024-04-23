@@ -1,4 +1,4 @@
-Tags: #git 
+#git 
 
 - clone, pull, push a repo inside directory of another repo
 - opposite of [[git sparse-checkout]]

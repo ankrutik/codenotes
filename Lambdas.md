@@ -1,6 +1,6 @@
 #java 
 
-See `codenotes/java_notes/lambdas/LambdaBasics.java` 
+See `codenotes/src/ankrutik/lambdas/LambdaBasics.java` 
 # Design Decisions
 
 - Functional Interface -> Lambdas -> Method References

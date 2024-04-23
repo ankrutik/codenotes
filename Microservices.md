@@ -1,4 +1,4 @@
-Tags: #tech #microservices #design
+#microservices #design #architecture
 
 # Best Practices
 - See "12-factor methodology to build a microservice"

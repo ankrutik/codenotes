@@ -1,4 +1,4 @@
-#behaviour #teamlead
+#softskills #management
 
 - why team leads are introduced?
 	- scale orgs

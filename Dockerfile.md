@@ -1,4 +1,4 @@
-Tags: #docker
+#docker
 
 - Text based file with extension that contains instructions to build docker image
 - All instructions ran in this file will be applied as "layers"

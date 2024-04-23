@@ -1,4 +1,4 @@
-Tags: #tech/language/python 
+#python 
 
 [[Python Standard Type Hierarchy]]
 

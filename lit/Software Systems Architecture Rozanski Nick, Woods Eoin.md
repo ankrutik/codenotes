@@ -1,5 +1,7 @@
-# Software Systems Architecture: Working with Stakeholders using Viewpoints and Perspectives by Rozanski Nick, Woods Eoin
+#architecture 
 
+Notes from **Software Systems Architecture: Working with Stakeholders using Viewpoints and Perspectives by Rozanski Nick, Woods Eoin****
+**
 ## Architecture Fundamentals
 Structures
 - Static Structures: design time elements like classes, packages, etc.

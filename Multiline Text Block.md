@@ -1,5 +1,4 @@
-# Multiline Text Block
-Tags: #java 
+#java 
 
 Introduced in Java 15
 

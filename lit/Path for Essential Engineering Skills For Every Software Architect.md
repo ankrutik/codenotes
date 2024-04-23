@@ -1,5 +1,4 @@
-#tech 
-
+#roadmap
 ## Software Engineering and Architecture, Design Patterns
 -   Software Architecture Essentials and Documentation:
 	-   [guided approach for formulating software architecture](https://vedcraft.com/architecture/introduction-to-software-architecture/) 

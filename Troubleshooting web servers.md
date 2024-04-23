@@ -1,5 +1,4 @@
-# Troubleshooting web servers
-Tags: #tech 
+#tech #webservers
 
 - Isolate if the error is at browser or server by looking at browser console or network tab
 	- [[HTTP Response Codes]] 400 or 500
@@ -12,8 +11,6 @@ Tags: #tech
 	- Error in application logs
 		- Log level needs to change
 		- Flag log entries by thread ID
-	
-
 
 # Links
 

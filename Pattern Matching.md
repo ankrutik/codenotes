@@ -1,5 +1,4 @@
-# Pattern Matching
-Tags: #java 
+#java 
 
 Introduced in Java 18
 
