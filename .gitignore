@@ -1,2 +1,9 @@
 .DS_Store
+.obsidian/workspace
+.obsidian/graph.json
+.obsidian/appearance.json
+.obsidian/workspace.json
+.obsidian/app.json
+.obsidian/workspace-mobile.json
+.trash/*
 
