@@ -1,7 +1,3 @@
-# AWS Certified Solutions Architect Associate
-
-[TOC]
-
 # 10000ft view
 
 **Availability Zone**: one or more discrete Data Centers; each with redundant power, network
