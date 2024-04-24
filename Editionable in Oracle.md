@@ -1,5 +1,4 @@
-# Editionable in Oracle
-tags:  #tech #databases #oracle #troubleshoot
+#databases #oracle #troubleshoot
 
 For those that are using Oracle 19c on their machines, you may get this error when modifying/working with views  
 ```
@@ -10,11 +9,11 @@ ORA-38824: A CREATE OR REPLACE command may not change the EDITIONABLE property o
 
 For example,  
 ```sql
-Create or replace view ANV_PERSON_CURRICULA AS
+Create or replace view SOME_VIEW AS
 ```
 becomes  
 ```sql
-Create or replace editionable view ANV_PERSON_CURRICULA AS
+Create or replace editionable view SOME_VIEW AS
 ```
 
 Seems Edition-Based Redefinition(EBR) is on by default 18c onwards.
