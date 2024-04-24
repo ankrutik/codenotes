@@ -6,6 +6,8 @@
 400-499 Client error
 500-599 Server error
 
+403 Forbidden
+
 # Links
 [[Troubleshooting web servers]]
 
