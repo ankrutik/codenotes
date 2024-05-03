@@ -36,7 +36,9 @@ Making commits from the parent directory will still show changes for the submodu
 `cd` to the submodule directory and perform commit and push to the submodule repo.
 
 `cd` to the parent directory. The submodule's commits will now show as pending to be added to the parent directory.
-
+```bash
+modified:   dir/submoduledir (new commits)
+```
 Making commits now from the parent directory will commit the submodule changes as part of the parent repo.
 
 # Links
