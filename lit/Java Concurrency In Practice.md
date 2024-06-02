@@ -4,24 +4,22 @@
 - class is thread safe
 - maintainers alerted for changes
 
-In the absense of synchronization, compiler, hardware, runtime take substantial liberties with timings and ordering of actions like caching variables in registers or processor-local caches.
+In the absence of synchronization, compiler, hardware, runtime take substantial liberties with timings and ordering of actions like caching variables in registers or processor-local caches.
 
 When JVM starts, it creates threads for
 - housekeeping like garbage collection, finalization
 - main thread
 
 # Thread Safety
-Thread safety is more protecting data than about structure of code.
-
-Synchronization options:
+More about protecting data than about structure of code.
+## Synchronization options
 - `synchronized`
 - `volatile`
 - explicit locks
 - atomic variables
-
-**Invariants** mean conditions or states of data of an object that signify the object to be in a valid state.
-
-Simple solutions first:
+## Invariants
+conditions or states of data of an object that signify the object to be in a valid state.
+## Simple solutions first
 1. Don't share state variable across threads
 2. Make state variable immutable
 3. Use synchronization whenever accessing state
@@ -35,7 +33,7 @@ Good object-oriented design principles for thread safe design:
 
 Make your code right first, then fast.
 
-Pursue optimisation measures only if:
+Pursue optimization measures only if:
 - your performance measurements and requirements indicate
 - your optimizations actual make a difference
 
@@ -106,4 +104,88 @@ Avoiding holding locks for lengthy operations like network or console I/O.
 # Sharing Objects
 There is no guarantee that operations in one thread will be performed in the order given by the program.
 
+Stale data can cause confusing, hard to reproduce and diagnose problems like
+- unexpected exceptions
+- corrupted data structures
+- inaccurate computations
+- infinite loops
 
+Mutable long and double variables
+- JVM requires fetch and store operations to be atomic except for these 2 where the 2 16bit parts can be worked on by different threads
+- use only with `volatile`
+
+Visualize locking to be about memory visibility and not just mutual exclusion.
+
+`volatile`
+- compiler and runtime are told to not reorder operations on it with other memory operations
+- values not stored in registers or caches which can be hidden from other processors
+- value is always that which is written by threads
+- locking guarantees visibility and atomicity, volatile only guarantees visibility
+- design criteria:
+	- writes do not depend on current value or ensure that only one thread can write to it
+		- many thread may read it
+	- variable does not participate in invariants with other variables
+	- locking is not required for any other reason while variable is accessed
+
+## Publication and escape
+- Publishing an object means making it's internal code available outside its current scope by means of
+	- storing reference to it
+	- returning it from non-private method
+	- passing it to method of another class
+- When publishing happens when not intended, it is said to have escaped.
+- Encapsulating has benefits here:
+	- makes analyzing correctness easier
+	- harder to violate design constraints
+
+## Safe construction practices
+- Do not let `this` reference escape
+	- Inner classes contain hidden reference to enclosing instance
+- Creation of a thread is alright but do not start thread in the constructor
+
+## Thread Confinement
+- When an object is confined for use within a single thread, it is thread-safe
+- Done as part of design
+- Examples
+	- eg. connection pooling
+- Ad-hoc thread confinement
+	- Confinement responsibility entirely on implementation
+	- Fragile
+- Stack thread confinement
+	- Object can be reached only via local variables
+	- Needs clear documentation
+- `ThreadLocal`
+	- implement a per thread value with value holding object
+	- do not abuse as global variables
+
+## Immutable Objects
+- always thread safe
+- Design criteria:
+	- state cannot be modified after construction
+	- all fields are final
+		- documenting to maintainers that value will not change
+		- Fields should be `private` till need to be made public, `final` till they need to be changed
+	- `this` reference does not escape during construction
+- Whenever group of related data items must be acted on atomically, consider an immutable holder class for them
+
+## Safe publication idioms
+- initialize object from static initializer
+- store reference to it in `AtomicReference` or `volatile` field
+- store reference to it in `final` field of properly constructed object
+- store reference to it in a field guarded by a lock
+Safely published, effectively immutable objects can be used safely by any thread without additional synchronization.
+
+## Care of objects by mutability
+- immutable objects can be safely published thru any mechanism
+- effectively immutable objects must be safely published
+- mutable objects must be safely published, must be either thread safe or guarded by a lock
+
+## Policies
+- Thread confinement
+	- owned and modified by exclusively 1 thread
+- Shared read-only
+	- accessed without synchronization, written by 1 thread
+	- immutable and effectively immutable
+- Shared thread-safe
+	- performs synchronization internally to allow free usage of public interface by multiple threads
+- Guarded
+	- accessed thru lock
