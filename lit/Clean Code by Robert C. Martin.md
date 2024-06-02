@@ -4,3 +4,9 @@
 - [[Composing Functions]]
 # Comments
 [[Comments]]
+
+# Formatting
+[[Code Formatting]]
+# Objects and Data Structures
+[[Designing Objects and Data Structures]]
+# Error Handling
