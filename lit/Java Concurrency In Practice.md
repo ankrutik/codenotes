@@ -193,23 +193,18 @@ Safely published, effectively immutable objects can be used safely by any thread
 # Composing Objects
 ## Design process
 - Identify variables that form the object state
-- Identify the invariance that constrained the state
-- Established policy for concurrent access to object state
-
-  
-
-## Visualise the scope of the object state
-
+- Identify the invariants that constrain states
+- Established policy for concurrent access to object state  
+## Visualise the scope of the object states
 Object state will consists of its fields
 - If they are of the primitive type, then all primitive variables for the state 
 - if the object has feels that references to other objects, then the variables of those objects will be part of the state as well.  
 
+Design decisions:
 - What is the State space or complete set of states that an object can take ?
 - What are the Invariants that define the valid states? 
 	- Encapsulation may be needed. 
 - What are the Post conditions that will define the valid state transitions? 
 	- Operations will need to be atomic. 
-
-
 ## State dependent operations.
 If precondition does not hold on the operation should fail. But in a concurrent program, the preconditions might become true later. Using built-in mechanisms like weight and notify can be difficult to use correctly, **use existing library classes such as blocking queues or semaphore** instead.
