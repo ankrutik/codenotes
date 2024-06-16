@@ -21,3 +21,4 @@ The `volatile` keyword solves this by skipping the cache altogether. So reads an
 
 # References
 https://www.baeldung.com/java-volatile-vs-atomic
+[[Java Concurrency In Practice]]
