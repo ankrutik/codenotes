@@ -50,11 +50,16 @@ public class AnnotationApproachConfig {
 }
 ```
 # Retrieve
-By...
-- Method name
-- Bean name
-- Class type
-	- Will fail if there are 2 or more bean methods that return objects of the same type
+- By...
+	- Method name
+	- Bean name
+	- Class type
+		- Will fail if there are 2 or more bean methods that return objects of the same type
+	- Get all
+		- `ctx.getBeanDefinitionName();`
+- To solve situation of Multiple candidates
+	- Define with `@Primary`
+	- Use `@Qualifier("qualifierName")`
 ```java
 // build application context
 var ctx = new AnnotationConfigApplicationContext(AnnotationApproachConfig.class);
@@ -68,4 +73,8 @@ ctx.getBean("Akshai");
 // class type
 //will fail if there are 2 or more bean methods that return same type
 ctx.getBean(SandwichShop.class);
+
+//get all
+Arrays.stream(ctx.getBeanDefinitionNames())
+.forEach(System.out::println);
 ```
