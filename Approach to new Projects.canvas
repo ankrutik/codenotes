@@ -9,7 +9,11 @@
 		{"id":"b8a08815f18135b0","type":"text","text":"Requirements","x":-245,"y":-317,"width":250,"height":60},
 		{"id":"8fcc1e605a52a2b8","type":"text","text":"Restrictions","x":35,"y":-317,"width":250,"height":60},
 		{"id":"b1449401add41ddd","type":"text","text":"Problem","x":-545,"y":-317,"width":250,"height":60},
+<<<<<<< HEAD
 		{"id":"07f017ca0f35738c","type":"text","text":"Continuous review of other points if they are on track with actual problem","x":-825,"y":-337,"width":250,"height":101},
+=======
+		{"id":"07f017ca0f35738c","type":"text","text":"Continuous review of other points if they are on track with actual problem","x":-825,"y":-337,"width":250,"height":117},
+>>>>>>> 17acf82 (notes)
 		{"id":"63d7a16c5202c14f","type":"text","text":"Recce of technologies/libraries","x":-610,"y":358,"width":250,"height":67},
 		{"id":"e7b947fdc7ecd2cc","type":"text","text":"Project Design","x":-245,"y":135,"width":250,"height":60},
 		{"id":"357d8517c6179290","type":"text","text":"Discussions","x":-245,"y":-66,"width":250,"height":60},
@@ -28,11 +32,15 @@
 		{"id":"d449dda34f60621d","type":"text","text":"Form (HTML/JSON)","x":230,"y":760,"width":250,"height":60},
 		{"id":"dfe7c0caffe7e353","type":"text","text":"Communication to and fro","x":45,"y":500,"width":250,"height":60},
 		{"id":"a24f003df91407aa","type":"text","text":"Authentication","x":355,"y":470,"width":250,"height":60},
+<<<<<<< HEAD
 		{"id":"a5dbd03a1be11f72","type":"text","text":"Checklists","x":-485,"y":530,"width":250,"height":60},
 		{"id":"c92dd602a861436d","x":201,"y":-18,"width":250,"height":60,"type":"text","text":"Ops"},
 		{"id":"691e90345a1f6153","x":379,"y":-164,"width":250,"height":60,"type":"text","text":"Downtime"},
 		{"id":"1818fcfed94fabe1","x":77,"y":-134,"width":250,"height":60,"type":"text","text":"Start/Stop"},
 		{"id":"d3b1ab6f9a9d0c47","x":379,"y":-287,"width":250,"height":60,"type":"text","text":"Re-Run"}
+=======
+		{"id":"a5dbd03a1be11f72","type":"text","text":"Checklists","x":-485,"y":530,"width":250,"height":60}
+>>>>>>> 17acf82 (notes)
 	],
 	"edges":[
 		{"id":"ae9c0379556f03af","fromNode":"e7b947fdc7ecd2cc","fromSide":"top","toNode":"357d8517c6179290","toSide":"bottom","label":"1"},
