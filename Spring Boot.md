@@ -4,3 +4,4 @@ Port at which the server will run at can be controlled from the `application.pro
 ```properties
 server.port=8082
 ```
+See [[Building Spring Boot Application]]
