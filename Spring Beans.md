@@ -1,4 +1,11 @@
 #spring 
+
+- Java Bean
+	- no arg constructor
+	- getter and setters
+	- `implements Serializable`
+- Spring Bean
+	- object managed by Spring IOC 
 # Define
 - Use `@Bean` annotation
 - Define inside [[Spring Configuration]] class
@@ -32,9 +39,17 @@ public class AnnotationApproachConfig {
 	}
 
 	@Bean(name = "SandwichShop")
+	@Primary
 	public SandwichShop buildSandwichShop(){
 		return new SandwichShop("Basic");
 	}
+
+	@Bean(name = "Mogo")
+	@Qualifier("MogoQual")
+	public SandwichShop buildSandwichShopMogo(){
+		return new SandwichShop("Mogo");
+	}
+
 
 	@Bean(name = "ChilliCheeseSandwichShop")
 	public Place buildChilliCheeseSandwichShop(){
@@ -44,8 +59,28 @@ public class AnnotationApproachConfig {
 
 	// auto-wire using parameters
 	@Bean(name = "MondayPlan")
-	public Plan buildMonday(Person rushil, Place ChilliCheeseSandwichShop){
-		return new Plan(rushil, ChilliCheeseSandwichShop);
+	public Plan buildMonday(Person rushil, Place chilliCheeseSandwichShop){
+		return new Plan(rushil, chilliCheeseSandwichShop);
+	}
+
+	// auto-wire using function call, duh!
+	@Bean(name = "TuesdayPlan")
+	public Plan buildTuesday(){
+		return new Plan(rushil(), buildSandwichShop());
+	}
+
+	// @Primary will be autowired into someshop
+	@Bean(name = "WednesdayPlan")
+	public Plan buildWednesday(Person rushil, Place someshop){
+		return new Plan(rushil, someshop);
+	}
+
+	// Mogo will be autowired into someshop
+	@Bean(name = "ThursdayPlan")
+	public Plan buildThurs(
+		Person rushil
+		, @Qualifier("MogoQual") Place someshop){
+			return new Plan(rushil, someshop);
 	}
 }
 ```
@@ -57,9 +92,11 @@ public class AnnotationApproachConfig {
 		- Will fail if there are 2 or more bean methods that return objects of the same type
 	- Get all
 		- `ctx.getBeanDefinitionName();`
-- To solve situation of Multiple candidates
+- To solve situation of multiple candidates
 	- Define with `@Primary`
 	- Use `@Qualifier("qualifierName")`
+		- `@Qualifier` can be used to refer to Beans named with `@Bean(name = "somename")` not just those name with `@Qualifier("somename")`
+
 ```java
 // build application context
 var ctx = new AnnotationConfigApplicationContext(AnnotationApproachConfig.class);
