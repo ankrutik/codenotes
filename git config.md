@@ -2,6 +2,12 @@
 
 # Troubleshooting
 
+## Authentication issues
+Considering your password has changed, use the following to reset any credential configurations that were previously used for authentication with the repo server.
+```bash
+git config --system --unset credential.helper
+```
+On the next exchange with the repo server, git will ask you for your username and password.
 ## New line issues
 ### Scenario 1
 Code base has been moved to another OS installation where `git bash` was installed anew. You have moved .ssh directory along with other got configurations. 
