@@ -8,7 +8,8 @@
 		{"id":"c17f7778f83228e8","type":"text","text":"[[Setting up Spring Application]]","x":-213,"y":-197,"width":250,"height":60},
 		{"id":"6e93e100a2d5ddd1","type":"text","text":"[[Spring Application Context]]","x":127,"y":-197,"width":250,"height":60},
 		{"id":"9fb3870d25b6e80b","type":"text","text":"[[Spring Configuration]]","x":127,"y":-89,"width":250,"height":60},
-		{"id":"c2252bd688bfcc84","type":"text","text":"[[Spring Beans]]","x":423,"y":-89,"width":250,"height":60}
+		{"id":"c2252bd688bfcc84","type":"text","text":"[[Spring Beans]]","x":423,"y":-89,"width":250,"height":60},
+		{"id":"eb2425147844adc9","x":252,"y":-338,"width":250,"height":60,"color":"6","type":"text","text":"[[Spring Containers]] types"}
 	],
 	"edges":[
 		{"id":"31efd53b0123a9f2","fromNode":"ffb9ef4babe31c5e","fromSide":"right","toNode":"7d9a6bb71e9e0703","toSide":"left"},
@@ -17,6 +18,7 @@
 		{"id":"1a74e79556c844df","fromNode":"ffb9ef4babe31c5e","fromSide":"right","toNode":"c17f7778f83228e8","toSide":"left"},
 		{"id":"7c399de44b1c8a13","fromNode":"c17f7778f83228e8","fromSide":"right","toNode":"6e93e100a2d5ddd1","toSide":"left"},
 		{"id":"90e6168edc32283c","fromNode":"c2252bd688bfcc84","fromSide":"left","toNode":"9fb3870d25b6e80b","toSide":"right"},
-		{"id":"c344effa8d8aba07","fromNode":"9fb3870d25b6e80b","fromSide":"top","toNode":"6e93e100a2d5ddd1","toSide":"bottom"}
+		{"id":"c344effa8d8aba07","fromNode":"9fb3870d25b6e80b","fromSide":"top","toNode":"6e93e100a2d5ddd1","toSide":"bottom"},
+		{"id":"e6fcd7812ad05a41","fromNode":"6e93e100a2d5ddd1","fromSide":"top","toNode":"eb2425147844adc9","toSide":"bottom","toEnd":"none"}
 	]
 }

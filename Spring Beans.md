@@ -1,5 +1,15 @@
 #spring 
-# Define
+
+# Comparison
+- Java Bean
+	- no arg constructor
+	- getter and setters
+	- `implements Serializable`
+- Spring Bean
+	- object managed by Spring IOC 
+
+# See [[Spring Component and ComponentScan]]
+# Explicit Definition Using a Spring Configuration
 - Use `@Bean` annotation
 - Define inside [[Spring Configuration]] class
   
@@ -32,9 +42,17 @@ public class AnnotationApproachConfig {
 	}
 
 	@Bean(name = "SandwichShop")
+	@Primary
 	public SandwichShop buildSandwichShop(){
 		return new SandwichShop("Basic");
 	}
+
+	@Bean(name = "Mogo")
+	@Qualifier("MogoQual")
+	public SandwichShop buildSandwichShopMogo(){
+		return new SandwichShop("Mogo");
+	}
+
 
 	@Bean(name = "ChilliCheeseSandwichShop")
 	public Place buildChilliCheeseSandwichShop(){
@@ -44,37 +62,29 @@ public class AnnotationApproachConfig {
 
 	// auto-wire using parameters
 	@Bean(name = "MondayPlan")
-	public Plan buildMonday(Person rushil, Place ChilliCheeseSandwichShop){
-		return new Plan(rushil, ChilliCheeseSandwichShop);
+	public Plan buildMonday(Person rushil, Place chilliCheeseSandwichShop){
+		return new Plan(rushil, chilliCheeseSandwichShop);
+	}
+
+	// auto-wire using function call, duh!
+	@Bean(name = "TuesdayPlan")
+	public Plan buildTuesday(){
+		return new Plan(rushil(), buildSandwichShop());
+	}
+
+	// @Primary will be autowired into someshop
+	@Bean(name = "WednesdayPlan")
+	public Plan buildWednesday(Person rushil, Place someshop){
+		return new Plan(rushil, someshop);
+	}
+
+	// Mogo will be autowired into someshop
+	@Bean(name = "ThursdayPlan")
+	public Plan buildThurs(
+		Person rushil
+		, @Qualifier("MogoQual") Place someshop){
+			return new Plan(rushil, someshop);
 	}
 }
 ```
-# Retrieve
-- By...
-	- Method name
-	- Bean name
-	- Class type
-		- Will fail if there are 2 or more bean methods that return objects of the same type
-	- Get all
-		- `ctx.getBeanDefinitionName();`
-- To solve situation of Multiple candidates
-	- Define with `@Primary`
-	- Use `@Qualifier("qualifierName")`
-```java
-// build application context
-var ctx = new AnnotationConfigApplicationContext(AnnotationApproachConfig.class);
-
-// simple String
-ctx.getBean("name");
-// method name
-ctx.getBean("rushil");
-// bean name
-ctx.getBean("Akshai");
-// class type
-//will fail if there are 2 or more bean methods that return same type
-ctx.getBean(SandwichShop.class);
-
-//get all
-Arrays.stream(ctx.getBeanDefinitionNames())
-.forEach(System.out::println);
-```
+# See [[Retrieve Spring Beans]]

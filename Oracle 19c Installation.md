@@ -9,3 +9,7 @@
 		- Not ASM
 	- Unselect "pluggable" or "container" installation
 	- UTF8 character encoding
+
+```
+setup.exe -ignorePrereq -J"-Doracle.install.db.validate.supportedOSCheck=false"
+```
