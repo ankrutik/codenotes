@@ -34,3 +34,7 @@ public class AppMain {
 	}
 }
 ```
+
+## Note on XML vs Annotation
+#spring/bestpractices Some new features may not be available via XML configurations. Move away from XML configuration and towards Java config or Annotations as much as possible.
+See tip on [this Spring JPA page](https://docs.spring.io/spring-data/jpa/reference/repositories/create-instances.html#jpa.java-config)
