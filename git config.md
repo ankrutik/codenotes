@@ -19,6 +19,7 @@ Use the following on the codebase to fix the issue. The files will not be shown 
 git config core.autocrlf input
 ```
 
+If the files still show up when checking status, perform a `git stash … git pull … git stash pop` after above. 
 # Resources
 - https://stackoverflow.com/questions/5787937/git-status-shows-files-as-changed-even-though-contents-are-the-same
 - 
