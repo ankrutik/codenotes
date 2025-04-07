@@ -1,5 +1,6 @@
 #git #troubleshoot 
 
+File is `.git/config`
 # Troubleshooting
 
 ## Authentication issues
