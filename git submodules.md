@@ -2,7 +2,6 @@
 
 - clone, pull, push a repo inside directory of another repo
 - opposite of [[git sparse-checkout]]
-
 ## Adding a submodule
 In existing git tracked project, `cd` to the directory where you want your submodule to exist.
 ```console
