@@ -6,4 +6,6 @@
 .obsidian/app.json
 .obsidian/workspace-mobile.json
 .trash/*
+src/.idea/
+src/codenotes.iml
 
