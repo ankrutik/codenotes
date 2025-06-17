@@ -4,6 +4,9 @@ File is `.git/config`
 # Troubleshooting
 
 ## Authentication issues
+
+See [[Platform Specific Credential Manager for git]]
+### Archived
 Considering your password has changed, use the following to reset any credential configurations that were previously used for authentication with the repo server.
 ```bash
 git config --system --unset credential.helper
