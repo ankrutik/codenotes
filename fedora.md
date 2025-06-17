@@ -37,3 +37,11 @@
 	2. coffee dial-in
 3. Obsidian
 4. Intellij
+
+## Power
+- Use Power button to Suspend laptop often
+	- Faster than Hibernate
+	- **Can lose data if battery exhausts during Suspend**
+- Performance mode when coding
+- Balanced Mode usually when note taking
+- Power Saver mode when below 50%
