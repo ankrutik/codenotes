@@ -29,3 +29,6 @@
 `y` : Yank or Copy
 `d`: Delete
 `p`: Paste
+
+## Timestamp
+`:put =strftime('%c')`
