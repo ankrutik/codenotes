@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"85ea261324217e93","x":-59,"y":-432,"width":250,"height":60,"type":"text","text":"VCS"},
+		{"id":"aac64af057d5387b","x":-220,"y":-240,"width":250,"height":149,"type":"text","text":"Divide work into smallest chunks and insist on frequent PRs and code merges"},
+		{"id":"ec7133b344fe652d","x":-20,"y":-40,"width":250,"height":170,"type":"text","text":"Every set of changes for review comments should have its own commit"}
+	],
+	"edges":[
+		{"id":"8b4bb66ceee083db","fromNode":"85ea261324217e93","fromSide":"bottom","toNode":"aac64af057d5387b","toSide":"top"},
+		{"id":"2251df7e8ce4c5b5","fromNode":"85ea261324217e93","fromSide":"bottom","toNode":"ec7133b344fe652d","toSide":"top"}
+	]
+}
