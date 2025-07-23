@@ -1,0 +1,18 @@
+{
+  "ulu-theme-settings@@ulu-color-accent": "ulu-green",
+  "ulu-theme-settings@@ulu-grad": false,
+  "ulu-theme-settings@@ulu-notitle": false,
+  "ulu-theme-settings@@ulu-prop-card": false,
+  "ulu-theme-settings@@ulu-codeblocks": "ulu-gummy-codeblock",
+  "ulu-theme-settings@@ulu-callouts": "ulu-gummy-callouts",
+  "ulu-theme-settings@@ulu-colorfo-headings": true,
+  "ulu-theme-settings@@ulu-faintselect": true,
+  "ulu-theme-settings@@ulu-accent-title": true,
+  "ulu-theme-settings@@ulu-header-line-accent": "var(--color-accent)",
+  "ulu-theme-settings@@ulu-fancy-canvas-1": "ulu-canvas-fancycolor20",
+  "ulu-theme-settings@@ulu-fancy-canvas-2": "ulu-canvas-fancycolor21",
+  "ulu-theme-settings@@ulu-fancy-canvas-3": "ulu-canvas-fancycolor22",
+  "ulu-theme-settings@@ulu-fancy-canvas-4": "ulu-canvas-fancycolor23",
+  "ulu-theme-settings@@ul-fancy-canvas-5": "ulu-canvas-fancycolor24",
+  "ulu-theme-settings@@ulu-fancy-canvas-6": "ulu-canvas-fancycolor25"
+}
