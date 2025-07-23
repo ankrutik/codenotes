@@ -3,6 +3,7 @@
 - Running thru command line was seen to be much faster than using 7z or WinRar.
 - No compression is used.
 - Use when backing up files/folder when moving between machines/laptops.
+``
 # Creating
 ```bash
 tar -czf archive_file_name.tar FolderToArchive/
