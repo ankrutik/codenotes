@@ -4,7 +4,7 @@
 		{"id":"09c9ab7638bcf179","type":"text","text":"Images","x":142,"y":-140,"width":250,"height":60},
 		{"id":"c16721e060112698","type":"text","text":"Build\n","x":517,"y":-140,"width":250,"height":60},
 		{"id":"c96c862235dffd6a","type":"file","file":"Docker Volumes.md","x":-780,"y":-311,"width":400,"height":400},
-		{"id":"e43e7da48106e383","type":"file","file":"Docker Bind Mounts.md","x":-780,"y":141,"width":400,"height":400},
+		{"id":"e43e7da48106e383","type":"file","file":"Docker Bind Mounts.md","x":-780,"y":141,"width":400,"height":400,"color":"2"},
 		{"id":"373e29404c1808f6","type":"file","file":"Maintaining Docker images and containers.md","x":567,"y":-711,"width":400,"height":400},
 		{"id":"ad2ef2b70302b91e","type":"file","file":"Developer workflow to update Docker Image.md","x":1173,"y":-711,"width":400,"height":400},
 		{"id":"bf2c34769c384448","type":"file","file":"Sharing Docker Images.md","x":67,"y":-711,"width":400,"height":400},

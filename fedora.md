@@ -29,6 +29,10 @@
 		└── codenotes/
 ```
 
+### Session restore (to be tested, does not work)
+```bash
+gsettings set org.gnome.SessionManager auto-save-session true
+```
 # Usage
 ## Screens
 1. Browser

@@ -32,3 +32,14 @@
 
 ## Timestamp
 `:put =strftime('%c')`
+
+## Visual Block Mode for column insertion
+```
+Esc
+Ctrl+V
+--- Select the lines you want to insert column text
+Shift+I
+--- Enter the text you want, the change will be displayed on the line where the cursor is currently
+Esc
+--- The change will reflect
+```
