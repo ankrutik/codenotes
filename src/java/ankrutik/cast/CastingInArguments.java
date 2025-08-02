@@ -9,12 +9,12 @@ public class CastingInArguments {
 
     public static void main(String[] args) {
         CastingInArguments object = new CastingInArguments();
-        object.print(1, 2, 3);
+        //object.print(1, 2, 3);
         // won't compile, method print(Integer[]) is ambiguous for the type CastingInArguments
 
-        object.print(Integer.valueOf(8), Integer.valueOf(9));
+        //object.print(Integer.valueOf(8), Integer.valueOf(9));
         // won't compile, method print(Integer[]) is ambiguous for the type CastingInArguments
-        object.print(Arrays.asList(Integer.valueOf(8), Integer.valueOf(9)));
+        //object.print(Arrays.asList(Integer.valueOf(8), Integer.valueOf(9)));
         // won't compile, method print(Integer[]) is ambiguous for the type CastingInArguments
         
         object.print(new Integer[]{Integer.valueOf(8), Integer.valueOf(9)});

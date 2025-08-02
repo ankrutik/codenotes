@@ -8,4 +8,4 @@
 .trash/*
 src/.idea/
 src/codenotes.iml
-
+src/out/*
