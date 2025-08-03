@@ -33,6 +33,10 @@
 ```bash
 gsettings set org.gnome.SessionManager auto-save-session true
 ```
+
+```bash
+sudo dnf install wmctrl
+```
 # Usage
 ## Screens
 1. Browser
