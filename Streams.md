@@ -18,6 +18,11 @@
 - ! Streams do not implement the `Iterable` interface
 	- Cannot be used with traditional `forEach` statement
 
+# Usage Insight
+- Use APIs inside reduce, collect, sorted instead of explicit coding
+- Think from pipeline view perspective
+- 
+
 # Quick Example
 ```java
 List<Double> temperatures = Arrays.asList(100.2, 98.0, 67.5, 103.4);  
@@ -37,33 +42,7 @@ Output:
 103.4
 103.4
 Count is:2
-```
 
-- streams are lazy
-- `Stream.of()`
-	- Create ad-hoc stream
-
-# distinct
-- uses `equals()` to remove duplicates
-# peek
-- Intermediate operation
-- Process element at that point.
-- #bestpractice Use to print values when debugging
-# forEach
-- Terminal operation
-- Process each item from above pipeline
-# anyMatch
-- Terminal operation
-- Stop at first match
-# limit
-- Intermediate Operation
-- Limit pipeline at the point before terminal
-- stateful, short circuiting
-# sorted
-- Intermediate Operation
-- sort values uptil that point in pipeline
-
-```java
 Stream.of("Alex", "Ben", "Charlie", "Subko", "Corridor7", "Sartre", "Standart")  
         .filter(s -> {  
             return s.length() > 3;  
@@ -77,6 +56,31 @@ Stream.of("Alex", "Ben", "Charlie", "Subko", "Corridor7", "Sartre", "Standart")
         .forEach(System.out::println)  
 ;
 ```
+
+- streams are lazy
+- `Stream.of()`
+	- Create ad-hoc stream
+
+# Common methods
+## distinct
+- uses `equals()` to remove duplicates
+## peek
+- Intermediate operation
+- Process element at that point.
+- #bestpractice Use to print values when debugging
+## forEach
+- Terminal operation
+- Process each item from above pipeline
+## anyMatch
+- Terminal operation
+- Stop at first match
+## limit
+- Intermediate Operation
+- Limit pipeline at the point before terminal
+- stateful, short circuiting
+## sorted
+- Intermediate Operation
+- sort values up till that point in pipeline
 
 # Creating streams
 ## Collections
@@ -133,7 +137,7 @@ Stream.iterate(2, n -> n + 2)
 - min and max
 	- Takes [[Comparator]]
 	- Java will figure out what to do
-# reduce
+## reduce
 1. Identity
 	1. Starting point of reduction
 2. Accumulator
@@ -166,7 +170,7 @@ Stream.iterate(2, n -> n + 2)
 	- BiFunction takes different types as parameters 
 	- BinaryOperator takes same types as parameters
 
-# collect
+## collect
 - mutable reduction
 - Streams into other forms like Maps, Lists, Sets
 ### Version 1, supplier, accumulator, combiner
@@ -231,7 +235,7 @@ Collectors.partitioningBy(
 )
 ```
 
-## Map()
+## Map/Transform
 - creates one-to-one mapping between elements in the stream and elements in the next stage of the stream
 - ! Think like it transforms the stream in another form
 
