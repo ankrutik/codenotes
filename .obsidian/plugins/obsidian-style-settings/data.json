@@ -15,7 +15,7 @@
   "ulu-theme-settings@@ulu-fancy-canvas-4": "ulu-canvas-fancycolor23",
   "ulu-theme-settings@@ul-fancy-canvas-5": "ulu-canvas-fancycolor24",
   "ulu-theme-settings@@ulu-fancy-canvas-6": "ulu-canvas-fancycolor25",
-  "ulu-theme-settings@@ulu-subtheme-selection": "ulu-we3",
+  "ulu-theme-settings@@ulu-subtheme-selection": "ulu-origami",
   "ulu-theme-settings@@ulu-header3-type": "Monaspace",
   "ulu-theme-settings@@ulu-header-line-h1": false,
   "ulu-theme-settings@@ulu-header1-type": "Monaspace",
@@ -25,5 +25,8 @@
   "ulu-theme-settings@@ulu-header4-type": "Monaspace",
   "ulu-theme-settings@@ulu-header5-type": "Monaspace",
   "ulu-theme-settings@@ulu-header6-type": "Monaspace",
-  "ulu-theme-settings@@ulu-border": "ulu-dborder"
+  "ulu-theme-settings@@ulu-border": "ulu-dborder",
+  "ulu-theme-settings@@ulu-radius": "var(--radius-s)",
+  "things-style@@fancy-code": true,
+  "things-style@@h1-color": "#EB1A1A"
 }
