@@ -41,4 +41,10 @@ public class StreamAssignments {
     private static void printHeader(String x) {
         System.out.println("========\n"+x+"\n========");
     }
+
+    void q4(){
+        List<Integer> integerList = Arrays.asList(1,2 ,3);
+        integerList.stream().mapToInt(i -> i)
+                .sum();
+    }
 }

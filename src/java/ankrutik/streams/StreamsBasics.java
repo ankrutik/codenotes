@@ -1,5 +1,7 @@
 package ankrutik.streams;
 
+import ankrutik.utility.ExamplesUtil;
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,7 +17,7 @@ public class StreamsBasics {
 
         ;
 
-        printHeader("ForEach");
+        ExamplesUtil.printHeader("ForEach");
         Stream.of("Alex", "Ben", "Charlie", "Subko", "Corridor7")
                 .filter(s -> {
                     System.out.println("Filter1: "+s);
@@ -24,7 +26,7 @@ public class StreamsBasics {
                 .forEach(s -> System.out.println(s));
                 ;
 
-        printHeader("AnyMatch 2");
+        ExamplesUtil.printHeader("AnyMatch 2");
         Stream.of("Alex", "Ben", "Charlie", "Subko", "Corridor7")
                 .map(s -> {
                     System.out.println("Filter1: "+s);
@@ -35,7 +37,7 @@ public class StreamsBasics {
                     return s.startsWith("C");
                 });
 
-        printHeader("Limit");
+        ExamplesUtil.printHeader("Limit");
         Stream.of("Alex", "Ben", "Charlie", "Subko", "Corridor7", "Sartre", "Standart")
                 .filter(s -> {
                     return s.length() > 3;
@@ -49,7 +51,7 @@ public class StreamsBasics {
                 .forEach(System.out::println)
         ;
 
-        printHeader("Map and collection view");
+        ExamplesUtil.printHeader("Map and collection view");
         Map<String, Integer> nameAge = new HashMap<>();
         nameAge.put("Krutik", 35);
         nameAge.put("Pratiksha", 32);
@@ -58,33 +60,33 @@ public class StreamsBasics {
                 .peek(System.out::println) // prints nothing
                 .count());
 
-        printHeader("Reduce 1 : Concatenate");
+        ExamplesUtil.printHeader("Reduce 1 : Concatenate");
         Stream<String> stream1 =
                 Stream.of("k", "r", "u", "t", "i", "k");
         System.out.println(stream1.reduce("", (v1, v2) -> v1 + v2));
         // krutik
 
-        printHeader("Reduce 2 : Sum of all values");
+        ExamplesUtil.printHeader("Reduce 2 : Sum of all values");
         Stream<Integer> stream2 =
                 Stream.of(1, 2, 3, 4);
         System.out.println(stream2.reduce(0, (v1, v2) -> v1 + v2));
         // 10
 
-        printHeader("Reduce 3 : Optional with value");
+        ExamplesUtil.printHeader("Reduce 3 : Optional with value");
         Stream<String> stream3 =
                 Stream.of("k", "r", "u", "t", "i", "k");
         Optional<String> optional1 =
                 stream3.reduce( (v1, v2) -> v1 + v2);
         System.out.println(optional1.isPresent() ? optional1.get() : "Not present in Optional");
 
-        printHeader("Reduce 4 : Optional without value");
+        ExamplesUtil.printHeader("Reduce 4 : Optional without value");
         Stream<String> stream4 =
                 Stream.of(); // empty on purpose
         Optional<String> optional2 =
                 stream4.reduce( (v1, v2) -> v1 + v2);
         System.out.println(optional2.orElse("Not present in Optional"));
 
-        printHeader("Reduce 5 : Parallel");
+        ExamplesUtil.printHeader("Reduce 5 : Parallel");
         Stream<String> stream5 =
                 Stream.of("k", "r", "u", "t", "i", "k", "s");
         System.out.println(
@@ -94,7 +96,7 @@ public class StreamsBasics {
                 )
         );
 
-        printHeader("Reduce 6 : Sort then Parallel Concatenate");
+        ExamplesUtil.printHeader("Reduce 6 : Sort then Parallel Concatenate");
         Stream<String> stream6 =
                 Stream.of("k", "r", "u", "t", "i", "k", "s");
         System.out.println(
@@ -105,7 +107,7 @@ public class StreamsBasics {
                 )
         );
 
-        printHeader("Collect 1 ");
+        ExamplesUtil.printHeader("Collect 1 ");
         Stream<String> stream7 =
                 Stream.of("k", "r", "u", "t", "i", "k");
         System.out.println(
@@ -116,7 +118,7 @@ public class StreamsBasics {
                 )
         );
 
-        printHeader("Collect with API collectors");
+        ExamplesUtil.printHeader("Collect with API collectors");
         List<String> vowels = Arrays.asList("a", "e", "i", "o", "u");
         System.out.println(
                 Stream.of("k", "r", "u", "t", "i", "k")
@@ -219,7 +221,7 @@ public class StreamsBasics {
                 .collect(Collectors.toList())
         ); // [Person[name=pati, age=32], Person[name=krutik, age=35]]
 
-        printHeader("Primitive streams");
+        ExamplesUtil.printHeader("Primitive streams");
         int[] ia = {1, 2, 3};
         double[] da = {1.1, 2.1, 3.1};
         long[] la = {1L, 2L, 3L};
@@ -238,7 +240,4 @@ public class StreamsBasics {
 
     }
 
-    static void printHeader(String content){
-        System.out.println("\n============\n" + content + "\n============");
-    }
 }
