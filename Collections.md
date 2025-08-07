@@ -38,6 +38,7 @@ List.copyOf(Collection coll)
 	- natural or custom ordering
 	- use when
 		- sorting needed
+	- `ClassCastException` when you add an Object that does not implement `Comparable`
 
 # Map
 - HashMap
@@ -108,6 +109,28 @@ containsValue(V)
 		- A copy is maintained to which elements will be added. 
 		- ! This means while iterating, the added elements will not be listed
 		- For CopyOnWriteArrayList and CopyOnWriteArraySet, the additions will appear to be at the end of the collections
+
+# Sorting
+- See [[Comparable and Comparator]]
+- ? If you have an array...
+	- Use `Arrays.sort(...)`
+- ? If you have collections...
+	- Use `Collections.sort(...)`
+- Both will modify the array or list
+- ! Passing immutable list from `Arrays.asList()` or `List.of()` will throw `UnsupportedOperationException`
+
+```java title:"Sort Arrays with Comparator"
+Comparator<Dog> byName = Comparator.comparing(  
+        dog -> dog.getName());    
+Arrays.sort(dogArray, byName);    
+```
+
+```java title:"Sort Lists with Comparator, reversed"
+Comparator<Dog> byNameReversed = Comparator.comparing(  
+        Dog::getName  
+).reversed();  
+Collections.sort(dogList, byNameReversed);
+```
 # Common methods
 ```java title:"removeIf(Predicate p)" 
 coll.removeIf(a -> a.startsWith("pre"));
