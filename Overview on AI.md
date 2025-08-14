@@ -1,0 +1,257 @@
+#ai 
+- AI general term
+	- ML
+		- Supervised/Unsupervised/Reinforcement Learning
+		- Patterns
+		- Deep Learning
+			- Networks that use layers of ML
+				- FM (Foundational Models)
+					- Large scale neural networks
+					- *Take existing LLM and tune for your use case*
+					- LLM or vision models or scientific models or audio models
+					- Deep fakes
+					- Generative AI
+- Image recog
+	- convolution NN
+- Speech recog
+	- Long short-term memory NN
+- neuron
+	- holds a number
+	- think of matrix
+	- [Explanation of neural networks](https://www.youtube.com/watch?v=aircAruvnKk)
+- LLM
+	- some context/setting of how the conversation should go
+	- LLM will predict one word at a time of what the response should be
+- Transformer
+	- LLM evolution where the question was interpreted all words at the same time instead of one by one
+	- Attention
+		- all words "talk" to each other to understand context
+	- Feed forward neural network
+		- extra capacity to store patterns
+	- Multiple iterations of Attention and FFNN
+	- Weights
+		- what the model has learned
+	- Data
+		- what the model is processing
+	- vectors
+		- words embedded with direction
+		- dot product
+			- 0: perpendicular
+			- positive: same direction
+			- negative: opposite directions
+	- embeddings
+		- vectors
+	- unembedding
+	- softmax
+		- change distribution of set of numbers to add up to 1
+		- smallest numbers go close to 0
+		- largest numbers go close to 1
+- hallucination
+	- types
+		- sentence contradiction
+		- prompt contradiction
+		- factual contradiction
+	- causes
+		- data quality
+		- generation method
+		- input context
+	- minimize
+		- clear and specific prompts
+		- active mitigation strategies
+			- lower temp, conservative answers
+		- multi-shot prompting
+	- as LLM reasonability improves, hallucination decreases
+- Intro to LLM
+	- llama files
+		- parameters
+		- run.c
+	- llama was released for use
+		- 140gb and no internet required
+	- inference is running the model
+	- training is to create the parameter files
+	- "reversal curse"
+	- LLMs are inscrutable artifacts
+	- stages
+		- pretraining -> base model
+			- less frequent
+			- expensive
+		- fine tuning -> assistant model
+			- cheaper
+			- more frequent
+			- labelling using actual humans
+		- comparison labelling
+	- "chatbot arena"
+	- scaling makes better
+	- LLMs can use tools
+	- Multimodal
+		- images and audio along with text
+	- thinking system analogy
+		- LLMS currently have only system 1
+		- system 2 is converting time to accuracy
+	- self improvement
+	- custom LLMs
+	- LLM OS
+	- LLM Security
+		- Jailbreak attacks
+			- using alternate role playing contexts or even BASE64 encoding of prompts
+		- Prompt injection
+			- prompt or even web pages that LLMs crawl will have human-unreadable prompts
+		- Data poisoning/backdoor
+			- sleeper agent attacks
+- Context window
+	- working memory to determine and maintain context
+	- when conversation goes past the window size, hallucinations can occur
+	- tokenization
+	- content length size
+		- self attention
+		- what can be part of context
+			- user input, model responses, system prompt, documents, source code
+	- challenges
+		- compute increases quadratically as context increases
+		- performance better when useful information at the start or end, not in middle
+		- safety
+- 4 methods of prompt engineering
+	- retrieval augmented generation (RAG)
+		- use domain knowledge base for accurate answers
+	- chain-of-thought (COT)
+		- break down bigger task then combine result of smaller tasks
+		- separate prompts
+	- Reason Act (ReACT)
+		- uses public and private knowledge repositories
+		- thought, action, observation
+	- directional stimulus prompting (DSP)
+		- guiding the model's attention to information subsets
+- https://www.promptingguide.ai/
+- Zero shot prompting
+	- No examples inputted as context
+-  Few shot prompting
+	- tell model what you expect
+- Chain-of-Thought
+	- few shot learning + reasoning steps as input
+- LLMs struggle with arithemetic
+- [Text Embedding](https://www.youtube.com/watch?v=vlcQV4j2kTo)
+	- embedding: text, images, etc as array of numbers
+	- embeddings and embedding models are deterministic
+	- inference models are non-deterministic
+	- semantic space
+	- choice of embedding models
+		- chunking strategy
+- [Vector databases](https://www.youtube.com/watch?v=He4Ft2lzNwc)
+	- More than 80% of new production data is unstructured
+	- attributes or dimensions act as vectors
+	- Vectorization
+	-  Approximate Nearest Neighbour
+	- high dimensional storage indexing, querying, pre-filtering
+	- multi-tenancy, HA, scalability, security
+- [Embeddings](https://aws.amazon.com/what-is/embeddings-in-machine-learning/)
+- [Databricks Vector Search](https://www.youtube.com/watch?v=nGDKL6Yolc0)
+	- semantic closeness using embeddings
+	- not exact match
+		- not standard database
+	- ingestion
+		- fast, real time updates, change detective, data preprocessing, scalability
+	- retrieval
+		- quality results with high recall, low latency, filtering metadata, hybrid search
+	- mosaic ai vector search
+		- serverless, search engine
+	- managing and scaling ingestion
+		- use delta sync indices
+		- triggered vs continuous
+		- beware overwriting source tables
+		- model serving endpoint performance should be assessed during ingestion
+	- improving retrieval efficiency
+		- identify source of latency
+		- beware fetching large results and additional metadata
+		- latest SDK
+		- "service principals" for prod
+		- model serving endpoint performance should be assessed
+	- mastering chunking
+		- chunk size
+		- fixed vs dynamic size
+		- element based
+		- semantic chunking
+		- include metadata with chucks
+		- chunking overlays
+	- check context window
+	- reverify embedding models
+	- task specific models
+	- check for normalization
+	- Look up MTEB leaderboard
+	- measure and reevaluate your strategy
+- [RAG](https://www.youtube.com/watch?v=oVtlp72f9NQ)
+	- grounding in data that is known to be relevant
+	- preprocess
+		- embeddings of all web pages, documents
+		- store documents with embeddings in vector database
+	- walkthru
+		- embedding of question
+		- use similarity algorithm to look up in vector db
+		- augment to the original prompt
+		- send to the LLM
+		- send response to user
+	- best practices
+		- embedding dimensionality, chunk size, chunk overlap
+		- quality of user's initial question
+			- ask LLM to improve it
+- [Chunking strategies](https://www.youtube.com/watch?v=pIGRwMjhMaQ)
+	- chunking then embedding
+	- overlap larger to say chunks are related
+	- programming language or doc format based splitters
+	- semantic chunking
+	- agentic chunking: chunks can stand on their own with meaning
+		- proposition based, 
+-  [Advanced RAG techniques for developers](https://www.youtube.com/watch?v=sGvXO7CVwc0)
+	- improve context
+	- store manual metadata with chunk
+		- ask LLM to generate metadata
+		- filter vector database with metadata before similarity search
+	- RAG can use structured relational or graph db
+	- multiple datastores on same data but different config like chunk size
+	- re-ranking: score and reorder chunks by relevance before sending to the LLM
+- [RAG vs. Fine Tuning](https://www.youtube.com/watch?v=00Q0G84kq3M)
+	- fine tuning bakes context and specialized behavior into the model weights
+- [AI agents](https://www.youtube.com/watch?v=F8NKVhkZZWI)
+	- shift from models to compound system
+	- easier to use modular systems that could be programmatic than tuning models
+	- control logic
+		- programmatic : fast
+		- agent : slow
+	- LLM agent
+		- reason
+		- act (via tools like search, calculator, APIs, etc)
+		- access memory
+	- flow
+		- user query -> plan/think -> act -> observe -> answer
+- [MCP](https://www.youtube.com/watch?v=7j_NE6Pjv-E)
+	- MCP yet to be standardized
+		- adopt implementation after standard
+- [MCP vs API](https://www.youtube.com/watch?v=7j1t3UZA1TY)
+	- MCP Host
+	- MCP Clients
+	- MCP protocol
+	- MCP server
+		- access to db, code reop,email, etc
+	- Tools
+	- Resources
+	- Prompt Template
+	- AI agents
+		- retrieve context
+		- act with tools
+- [A2A protocol](https://www.youtube.com/watch?v=mDcULe4GMyA)
+	- Google
+	- Connecting other agents with your agents
+		- MCP is connecting agent with Tools
+	- Agent Card
+	- A2A server
+	- A2A client
+	- A2A task
+- [A2A vs MCP](https://www.youtube.com/watch?v=56BXHCkngss)
+
+## References
+https://www.youtube.com/watch?v=Beh13Cd_QbY
+transformer
+https://www.youtube.com/watch?v=wjZofJX0v4M
+Why Large Language Models Hallucinate
+https://www.youtube.com/watch?v=cfqtFvWOfg0
+Intro to LLM
+https://www.youtube.com/watch?v=zjkBMFhNj_g
