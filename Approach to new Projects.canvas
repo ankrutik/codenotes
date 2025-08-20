@@ -33,8 +33,8 @@
 		{"id":"691e90345a1f6153","type":"text","text":"Downtime","x":379,"y":-164,"width":250,"height":60},
 		{"id":"1818fcfed94fabe1","type":"text","text":"Start/Stop","x":77,"y":-134,"width":250,"height":60},
 		{"id":"d3b1ab6f9a9d0c47","type":"text","text":"Re-Run","x":379,"y":-287,"width":250,"height":60},
-		{"id":"ddf1cb23899cb2fc","x":11,"y":934,"width":250,"height":60,"type":"text","text":"Development, SHOULD BE ITS OWN CANVAS"},
-		{"id":"fe69c5ed82852572","x":12,"y":1108,"width":249,"height":184,"color":"1","type":"text","text":"Personal Build Automation\n- Maintain clean builds/setup, as much as possible, after each change"}
+		{"id":"ddf1cb23899cb2fc","type":"text","text":"Development, SHOULD BE ITS OWN CANVAS","x":11,"y":934,"width":250,"height":60},
+		{"id":"fe69c5ed82852572","type":"text","text":"Personal Build Automation\n- Maintain clean builds/setup, as much as possible, after each change","x":12,"y":1108,"width":249,"height":272,"color":"1"}
 	],
 	"edges":[
 		{"id":"ae9c0379556f03af","fromNode":"e7b947fdc7ecd2cc","fromSide":"top","toNode":"357d8517c6179290","toSide":"bottom","label":"1"},
