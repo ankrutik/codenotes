@@ -1,15 +1,18 @@
 #linux/distro
 
 “Workstation” variant is meant for developers. 
+
+**When updating Linux, check...**
+- Will **Gnome** be updated as part of the Linux update?
+	- Do your installed applications have an update for that Gnome version?
 # Installation
 - Fedora Media Writer to write bootloader to disk
 	- Can be used to run OS from USB
 - Needs RAID turned off in BIOS
 	- More of a Windows thing
 	- Switch to AHCI
-
 # Setup
-- Install via flatpak or Application Store
+- Install via `flatpak` or Application Store
 	- Intellij
 	- CopyQ
 		- Setup system shortcut to execute `copyq show`
@@ -29,7 +32,11 @@
 		└── codenotes/
 ```
 
-### Session restore (to be tested, does not work)
+# Session restore 
+Use [Another Windows Session Manager](https://extensions.gnome.org/extension/4709/another-window-session-manager/) to save and restore Windows.
+As of 2025.11.01, no support for Gnome 49.
+
+## Archive (does not work)
 ```bash
 gsettings set org.gnome.SessionManager auto-save-session true
 ```
@@ -45,9 +52,6 @@ sudo dnf install wmctrl
 	2. coffee dial-in
 3. Obsidian
 4. Intellij
-
-Use [Another Windows Session Manager](https://extensions.gnome.org/extension/4709/another-window-session-manager/) to save and restore Windows
-
 ## Power
 - Use Power button to Suspend laptop often
 	- Faster than Hibernate
