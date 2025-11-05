@@ -2,6 +2,8 @@
 
 “Workstation” variant is meant for developers. 
 
+**Uses rpm files**, not deb.
+
 **When updating Linux, check...**
 - Will **Gnome** be updated as part of the Linux update?
 	- Do your installed applications have an update for that Gnome version?
@@ -21,6 +23,10 @@
 - vim 
 	- See [[vimrc]]
 - Obsidian
+- Drivers
+	- Epson L3150
+		- See [[rpm#Install local file with digest verification]]
+		- Uploaded to Drive
 ## Directory Structure
 ```
 ~/Projects/ 
