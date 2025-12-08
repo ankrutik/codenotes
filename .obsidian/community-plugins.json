@@ -1,8 +1,8 @@
 [
-  "webpage-html-export",
+  "obsidian-admonition",
+  "code-styler",
+  "obsidian-list-callouts",
   "obsidian-outliner",
   "obsidian-style-settings",
-  "obsidian-list-callouts",
-  "obsidian-admonition",
-  "code-styler"
+  "webpage-html-export"
 ]
