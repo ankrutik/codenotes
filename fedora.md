@@ -27,6 +27,12 @@
 	- Epson L3150
 		- See [[rpm#Install local file with digest verification]]
 		- Uploaded to Drive
+
+## Installing software
+Stay away from the "Apps" software. Clunky and slow.
+```bash title:'Install rpm files from bash'
+sudo dnf install package.rpm
+```
 ## Directory Structure
 ```
 ~/Projects/ 
@@ -37,6 +43,7 @@
 		└── notes/
 		└── codenotes/
 ```
+
 
 # Session restore 
 Use [Another Windows Session Manager](https://extensions.gnome.org/extension/4709/another-window-session-manager/) to save and restore Windows.

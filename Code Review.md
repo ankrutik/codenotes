@@ -1,0 +1,38 @@
+#coding/review
+
+- quick scan
+	- read JIRA or documents
+	- ! should you talk to the dev to understand quicker?
+	- commit message
+		- correct
+		- descriptive
+		- conventional format
+	- quick scan
+		- single feature or multiple
+	- if concerns here, blocking comment
+- is it readable?
+	- readable at high level
+	- skim the PR and understood what it does?
+	- comments where needed?
+	- leave a comment if you cannot understand after reading top-to-bottom
+- names
+	- unclear function and variable names will slow everyone down
+	- naming smells
+		- placeholder or temporary names left by accident
+		- domain mismatch
+		- forced to read the implementation to understand the name
+- third-party integrations
+	- retries
+	- timeouts
+	- logging
+	- error handling
+	- idempotency
+- is this the best way to do it?
+	- Is there...?
+		- a simpler way
+		- standard library function
+		- well-known pattern
+		- built-in tool
+		- reliable open-source solution
+	- Not blocking usually
+	- Be respectful of everyone's own way of what perfect code is
