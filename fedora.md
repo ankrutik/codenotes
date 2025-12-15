@@ -33,6 +33,8 @@ Stay away from the "Apps" software. Clunky and slow.
 ```bash title:'Install rpm files from bash'
 sudo dnf install package.rpm
 ```
+
+See [[gnome extensions#installing extensions]]
 ## Directory Structure
 ```
 ~/Projects/ 
