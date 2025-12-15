@@ -37,7 +37,7 @@ sudo dnf install package.rpm
 See [[gnome extensions#installing extensions]]
 ## Directory Structure
 ```
-~/Projects/ 
+~/projects/ 
 	├── personal/ 
 	├── work/ 
 	├── opensource/ 
@@ -45,7 +45,9 @@ See [[gnome extensions#installing extensions]]
 		└── notes/
 		└── codenotes/
 ```
-
+```
+mkdir -p projects/learn/notes
+```
 
 # Session restore 
 Use [Another Windows Session Manager](https://extensions.gnome.org/extension/4709/another-window-session-manager/) to save and restore Windows.
