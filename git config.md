@@ -6,6 +6,7 @@ File is `.git/config`
 git config --global user.email "ankrutik@gmail.com"
 git config --global user.name "Krutik Arekar"
 git config --global core.editor "vim"
+git config --global credential.helper store
 ```
 
 # Troubleshooting
