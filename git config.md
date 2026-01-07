@@ -1,10 +1,15 @@
 #git #troubleshoot 
 
 File is `.git/config`
+
+```bash title:'Common configurations'
+git config --global user.email "ankrutik@gmail.com"
+git config --global user.name "Krutik Arekar"
+git config --global core.editor "vim"
+```
+
 # Troubleshooting
-
 ## Authentication issues
-
 See [[Platform Specific Credential Manager for git]]
 ### Archived
 Considering your password has changed, use the following to reset any credential configurations that were previously used for authentication with the repo server.

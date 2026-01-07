@@ -16,18 +16,36 @@
 # Setup
 - Install via `flatpak` or Application Store
 	- Intellij
-	- CopyQ
-		- Setup system shortcut to execute `copyq show`
+	- Clipboard Managers
+		- [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+		- CopyQ
+			- Setup system shortcut to execute `copyq show`
 - git
 	- See [[Platform Specific Credential Manager for git]]
 - vim 
 	- See [[vimrc]]
-- Obsidian
+- [Obsidian flatpak](https://obsidian.md/download)
+- [protonvpn](https://protonvpn.com/support/official-linux-vpn-fedora)
 - Drivers
 	- Epson L3150
 		- See [[rpm#Install local file with digest verification]]
 		- Uploaded to Drive
 
+```bash title: 'Common software'
+# libreoffice
+sudo dnf install libreoffice
+
+#protonvpn
+sudo dnf install ./protonvpn-stable-release-1.0.3-1.noarch.rpm && sudo dnf check-update --refresh
+sudo dnf install proton-vpn-gnome-desktop
+
+# nvidia drivers
+sudo dnf install xorg-x11-drv-nvidia-cuda xorg-x11-drv-nvidia-cuda-libs
+
+# qbittorent
+sudo dnf install qbittorrent
+
+```
 ## Installing software
 Stay away from the "Apps" software. Clunky and slow.
 ```bash title:'Install rpm files from bash'
@@ -36,7 +54,7 @@ sudo dnf install package.rpm
 
 See [[gnome extensions#installing extensions]]
 ## Directory Structure
-```
+```bash 
 ~/projects/ 
 	├── personal/ 
 	├── work/ 
@@ -44,9 +62,12 @@ See [[gnome extensions#installing extensions]]
 	└── learn/
 		└── notes/
 		└── codenotes/
-```
-```
+
 mkdir -p projects/learn/notes
+mkdir -p projects/learn/codenotes
+mkdir -p projects/personal
+mkdir -p projects/work
+mkdir -p projects/opensource		
 ```
 
 # Session restore 
@@ -76,3 +97,17 @@ sudo dnf install wmctrl
 - Performance mode when coding
 - Balanced Mode usually when note taking
 - Power Saver mode when below 50%
+
+# Troubleshooting
+[Fedora Troubleshooting Quick Doc](https://docs.fedoraproject.org/en-US/quick-docs/troubleshooting-bluetooth-problems/)
+## Sound lag
+Reboot after following then wait for some time. 
+The issue goes away on it's own.
+Observed to happen when video/sound drivers were changed. Probably some build happening in the back.
+```bash title:'Sound lag'
+sudo dnf install nvidia-driver kmod-nvidia-latest-dkms
+
+sudo dnf install kernel-devel-matched kernel-headers
+
+sudo dnf reinstall pipewire pipewire-pulseaudio pipewire-alsa wireplumber
+```
