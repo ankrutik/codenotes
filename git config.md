@@ -5,8 +5,12 @@ File is `.git/config`
 ```bash title:'Common configurations'
 git config --global user.email "ankrutik@gmail.com"
 git config --global user.name "Krutik Arekar"
+
 git config --global core.editor "vim"
+
 git config --global credential.helper store
+
+git config --global pull.rebase true
 ```
 
 # Troubleshooting
