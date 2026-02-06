@@ -100,14 +100,74 @@ sudo dnf install wmctrl
 
 # Troubleshooting
 [Fedora Troubleshooting Quick Doc](https://docs.fedoraproject.org/en-US/quick-docs/troubleshooting-bluetooth-problems/)
+
+## Copying large files
+Use [[rsync]] to avoid the "Error Splicing File" issue
 ## Sound lag
 Reboot after following then wait for some time. 
 The issue goes away on it's own.
 Observed to happen when video/sound drivers were changed. Probably some build happening in the back.
-```bash title:'Sound lag'
+```bash title:'Restart pipewire services'
+systemctl --user restart pipewire pipewire-pulse wireplumber
+```
+### Immediate fix
+```
+# Completely disable audio power management
+sudo vim /etc/modprobe.d/audio_powersave.conf
+
+# Disable ALL audio power saving
+options snd_hda_intel power_save=0 power_save_controller=N
+options snd_ac97_codec power_save=0
+options snd_usb_audio power_save=0
+
+# Completely disable audio power management
+sudo vim /etc/modprobe.d/audio_powersave.conf
+
+# Disable ALL audio power saving
+options snd_hda_intel power_save=0 power_save_controller=N
+options snd_ac97_codec power_save=0
+options snd_usb_audio power_save=0
+```
+
+
+```bash title:' Low latency config'
+vim  ~/.config/pipewire/pipewire.conf.d/10-low-latency.conf 
+
+# add following
+context.properties = { default.clock.rate = 48000 default.clock.quantum = 256 default.clock.min-quantum = 16 default.clock.max-quantum = 1024 
+}
+
+# restart
+systemctl --user restart pipewire pipewire-pulse wireplumber
+
+```
+
+### Archive
+```bash title:'Reinstall drivers'
 sudo dnf install nvidia-driver kmod-nvidia-latest-dkms
 
 sudo dnf install kernel-devel-matched kernel-headers
 
 sudo dnf reinstall pipewire pipewire-pulseaudio pipewire-alsa wireplumber
+```
+
+PulseAudio should not be present.
+```bash title:'Remove pulseaudio and install pipewire'
+sudo dnf install pipewire pipewire-alsa pipewire-pulseaudio \ pipewire-jack-audio-connection-kit wireplumber \ pipewire-utils
+
+sudo dnf remove pulseaudio pulseaudio-utils
+
+systemctl --user enable pipewire pipewire-pulse wireplumber 
+systemctl --user start pipewire pipewire-pulse wireplumber
+```
+
+## Repo related issues
+```bash title:'Error message'
+Failed to load updateinfo cache for repo...
+id too large...
+```
+
+```bash title: 'Solution'
+sudo dnf clean all
+sudo dnf makecache
 ```
