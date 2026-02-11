@@ -97,6 +97,9 @@ sudo dnf install wmctrl
 - Performance mode when coding
 - Balanced Mode usually when note taking
 - Power Saver mode when below 50%
+## GNOME Extensions
+Can be controlled from browser (via browser extension) at 
+https://extensions.gnome.org/local/
 
 # Troubleshooting
 [Fedora Troubleshooting Quick Doc](https://docs.fedoraproject.org/en-US/quick-docs/troubleshooting-bluetooth-problems/)
@@ -171,3 +174,10 @@ id too large...
 sudo dnf clean all
 sudo dnf makecache
 ```
+
+## Clipboard Indicator
+**This will remove your clipboard history.**
+Registry file might be corrupted.  
+Check if you have the file `/home/krutikarekar/.cache/clipboard-indicator@tudmotu.com/registry.txt`  
+If it exists, rename to `/home/krutikarekar/.cache/clipboard-indicator@tudmotu.com/registry.backup.txt` 
+Logout/login to GNOME. 
