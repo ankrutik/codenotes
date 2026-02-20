@@ -83,6 +83,12 @@ gsettings set org.gnome.SessionManager auto-save-session true
 sudo dnf install wmctrl
 ```
 # Usage
+## Software Updates
+Check what needs update in the "Software" application, but prefer bash to actually update.
+```bash title:'Update software'
+sudo dnf upgrade firefox
+sudo dnf upgrade vlc
+```
 ## Screens
 1. Browser
 2. Terminal tabs 
