@@ -103,17 +103,22 @@ https://extensions.gnome.org/local/
 
 # Troubleshooting
 [Fedora Troubleshooting Quick Doc](https://docs.fedoraproject.org/en-US/quick-docs/troubleshooting-bluetooth-problems/)
-
 ## Copying large files
 Use [[rsync]] to avoid the "Error Splicing File" issue
 ## Sound lag
+As of fedora 43, PulseAudio should not be installed. pipewire and wireplumber should be  installed.
+After an upgrade, if you notice audio lag, restart wireplumber...
+```bash title:'Restart wireplumber'
+systemctl restart --user wireplumber
+```
+### Archived
 Reboot after following then wait for some time. 
 The issue goes away on it's own.
 Observed to happen when video/sound drivers were changed. Probably some build happening in the back.
 ```bash title:'Restart pipewire services'
 systemctl --user restart pipewire pipewire-pulse wireplumber
 ```
-### Immediate fix
+#### Immediate fix
 ```
 # Completely disable audio power management
 sudo vim /etc/modprobe.d/audio_powersave.conf
@@ -131,7 +136,6 @@ options snd_hda_intel power_save=0 power_save_controller=N
 options snd_ac97_codec power_save=0
 options snd_usb_audio power_save=0
 ```
-
 
 ```bash title:' Low latency config'
 vim  ~/.config/pipewire/pipewire.conf.d/10-low-latency.conf 
@@ -145,7 +149,6 @@ systemctl --user restart pipewire pipewire-pulse wireplumber
 
 ```
 
-### Archive
 ```bash title:'Reinstall drivers'
 sudo dnf install nvidia-driver kmod-nvidia-latest-dkms
 
