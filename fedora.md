@@ -108,6 +108,10 @@ Can be controlled from browser (via browser extension) at
 https://extensions.gnome.org/local/
 
 # Troubleshooting
+
+> [!TIP]
+> Many problems in linux can be fixed by finding the related services and restarting them.
+
 [Fedora Troubleshooting Quick Doc](https://docs.fedoraproject.org/en-US/quick-docs/troubleshooting-bluetooth-problems/)
 ## Copying large files
 Use [[rsync]] to avoid the "Error Splicing File" issue
@@ -190,3 +194,14 @@ Registry file might be corrupted.
 Check if you have the file `/home/krutikarekar/.cache/clipboard-indicator@tudmotu.com/registry.txt`  
 If it exists, rename to `/home/krutikarekar/.cache/clipboard-indicator@tudmotu.com/registry.backup.txt` 
 Logout/login to GNOME. 
+
+## No Internet
+...even though wifi is working on other devices
+```bash title:'Restart Network'
+sudo systemctl restart NetworkManager
+```
+
+```bash title:'Restart wifi interface'
+sudo nmcli radio wifi off
+sudo nmcli radio wifi on
+```
