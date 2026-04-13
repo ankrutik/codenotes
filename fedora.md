@@ -205,3 +205,12 @@ sudo systemctl restart NetworkManager
 sudo nmcli radio wifi off
 sudo nmcli radio wifi on
 ```
+
+## Majestouch Convertible 2
+Reset keyboard using the small button at the top of the num pad.
+
+```bash title:'Useful Bluetooth commands'
+bluetoothctl
+
+systemctl restart bluetooth
+```
