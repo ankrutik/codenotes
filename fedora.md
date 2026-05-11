@@ -50,6 +50,8 @@ sudo dnf install qbittorrent
 Stay away from the "Apps" software. Clunky and slow.
 ```bash title:'Install rpm files from bash'
 sudo dnf install package.rpm
+
+sudo rpm -ivh --nodigest --nofiledigest  epson-printer-utility-1.2.2-1.x86_64.rpm
 ```
 
 See [[gnome extensions#installing extensions]]
@@ -107,12 +109,25 @@ sudo dnf upgrade vlc
 Can be controlled from browser (via browser extension) at 
 https://extensions.gnome.org/local/
 
+## Keyboard Customizations
+Use `keyd`
+See [[keyd]]
 # Troubleshooting
 
 > [!TIP]
 > Many problems in linux can be fixed by finding the related services and restarting them.
 
 [Fedora Troubleshooting Quick Doc](https://docs.fedoraproject.org/en-US/quick-docs/troubleshooting-bluetooth-problems/)
+
+## Clear diskspace
+```bash
+sudo dnf clean all
+sudo dnf autoremove
+
+// UI based python program
+sudo bleachbit
+```
+
 ## Copying large files
 Use [[rsync]] to avoid the "Error Splicing File" issue
 ## Sound lag
