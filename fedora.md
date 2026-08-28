@@ -131,11 +131,15 @@ sudo bleachbit
 ## Copying large files
 Use [[rsync]] to avoid the "Error Splicing File" issue
 ## Sound lag
-As of fedora 43, PulseAudio should not be installed. pipewire and wireplumber should be  installed.
-After an upgrade, if you notice audio lag, restart wireplumber...
+*Solution tested to be working perfectly after upgrading to fedora 44.*
+As of fedora 43, PulseAudio should not be installed. pipewire and wireplumber is used.
+
+After an OS or NVIDIA drivers update, if you notice an audio lag, turn off all applications and restart *wireplumber*...
 ```bash title:'Restart wireplumber'
 systemctl restart --user wireplumber
 ```
+
+You might have to restart a few times.
 ### Archived
 Reboot after following then wait for some time. 
 The issue goes away on it's own.
