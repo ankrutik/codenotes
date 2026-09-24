@@ -28,6 +28,7 @@
 - [Obsidian flatpak](https://obsidian.md/download)
 - [protonvpn](https://protonvpn.com/support/official-linux-vpn-fedora)
 - See [[iCloud Calendar on Fedora]]
+- [Open Logi for Logitech mice customizations](https://openlogi.org/)
 - Drivers
 	- Epson L3150
 		- See [[rpm#Install local file with digest verification]]
@@ -227,3 +228,4 @@
   systemctl restart bluetooth
   ```
 - See [[Wireplumber config to not let Bluetooth Speaker Sleep or Disconnect]]
+
