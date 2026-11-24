@@ -1,13 +1,22 @@
-#linux/distro
-
-“Workstation” variant is meant for developers. 
-
-**Uses rpm files**, not deb.
-
-**When updating Linux, check...**
-
-- Will **Gnome** be updated as part of the Linux update?
-	- Do your installed applications have an update for that Gnome version?
+- #linux/distro
+- “Workstation” variant is meant for developers.
+- **Uses rpm files**, not deb.
+- **When updating Linux, check...**
+	- Will **Gnome** be updated as part of the Linux update?
+		- Do your installed applications have an update for that Gnome version?
+- # Regulars
+	- Restart or reboot fedora
+		- ```bash
+		  sudo reboot
+		  ```
+	- To check if nvidia drivers are still building
+		- ```bash
+		  modinfo -F version nvidia
+		  ```
+	- Misc
+		- ```bash
+		  systemctl restart --user wireplumber
+		  ```
 - # Installation
 - Fedora Media Writer to write bootloader to disk
 	- Can be used to run OS from USB
@@ -74,6 +83,12 @@
   mkdir -p projects/work
   mkdir -p projects/opensource		
   ```
+- # Using mouse from keyboard
+	- ```
+	  gsettings set org.gnome.desktop.a11y.keyboard mousekeys-enable true
+	  gsettings set org.gnome.desktop.a11y.keyboard mousekeys-max-speed 2500
+	  ```
+	-
 - # Session restore 
   Use [Another Windows Session Manager](https://extensions.gnome.org/extension/4709/another-window-session-manager/) to save and restore Windows.
   As of 2025.11.01, no support for Gnome 49.
@@ -131,8 +146,7 @@
 - ## Sound lag
   *Solution tested to be working perfectly after upgrading to fedora 44.*
   As of fedora 43, PulseAudio should not be installed. pipewire and wireplumber is used.
-  
-  After an OS or NVIDIA drivers update, if you notice an audio lag, turn off all applications and restart *wireplumber*...
+- After an OS or NVIDIA drivers update, if you notice an audio lag, turn off all applications and restart *wireplumber*...
   ```bash title:'Restart wireplumber'
   systemctl restart --user wireplumber
   ```
@@ -228,4 +242,3 @@
   systemctl restart bluetooth
   ```
 - See [[Wireplumber config to not let Bluetooth Speaker Sleep or Disconnect]]
-
